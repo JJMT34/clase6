@@ -115,6 +115,14 @@ def main():
                 lista_med=[]
 
                 for i in range(0,nm):
+                    repetido=False
+                    for m in lista_med:
+                        if m.verNombre() == nombre:
+                            repetido=True
+                            break
+                    if repetido:
+                        print('El medicamento ya fue ingresado')
+                        continue
                     nombre_medicamentos = input("Ingrese el nombre del medicamento: ")
                     dosis =int(input("Ingrese la dosis: "))
                     medicamento = Medicamento()
